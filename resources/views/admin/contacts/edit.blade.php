@@ -31,7 +31,7 @@
                         <label for="address">Адрес:</label>
                         <input type="text" class="form-control" name="address" value="{{$contact->address}}"/>
                     </div>
-                    <button type="submit" class="btn btn-primary-outline">Add contact</button>
+                    <button type="submit" class="btn btn-primary-outline">Сохранить</button>
                 </form>
             </div>
 

@@ -15,7 +15,7 @@ Route::get('/', 'IndexController@index')->name('index');
 Route::any ( '/search', function () {
     $q = \Illuminate\Support\Facades\Input::get ( 'q' );
     if($q != ""){
-        $contacts = \App\Contact::where('name', 'LIKE', '%' . $q . '%')->orWhere('phone', 'LIKE', '%' . $q . '%' )->paginate(5)->setPath('');
+        $contacts = \App\Contact::where('first_name', 'LIKE', '%' . $q . '%')->orWhere('last_name', 'LIKE', '%' . $q . '%' )->orWhere('phone', 'LIKE', '%' . $q . '%' )->paginate(5)->setPath('');
         $pagination = $contacts->appends( array (
             'q' => \Illuminate\Support\Facades\Input::get ( 'q' )
         ) );
@@ -25,6 +25,9 @@ Route::any ( '/search', function () {
     return view('welcome')->withMessage("Извините, запроc по $q не найдено");
 } );
 Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout', function () {
+    return abort(404);
+});
 Route::group(['prefix'=>'home', 'middleware' => 'auth'], function(){
     Route::get('/', 'HomeController@index');
     Route::resource('/contacts', 'Admin\ContactsController');

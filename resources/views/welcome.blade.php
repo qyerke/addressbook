@@ -40,7 +40,7 @@
                 </div>
             </form>
             <li class="nav-item active">
-                <a class="btn btn-primary" role="button">Добавить контакт</a>
+                <a href="{{route('contacts.create')}}" class="btn btn-primary" role="button">Добавить контакт</a>
             </li>
         </div>
     </nav>
@@ -54,7 +54,8 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>ФИО</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
                 <th>Телефон</th>
                 <th>Email</th>
                 <th>Адрес</th>
@@ -63,7 +64,8 @@
             <tbody>
             @foreach($contacts as $contact)
                 <tr>
-                    <td>{{$contact->name}}</td>
+                    <td>{{$contact->first_name}}</td>
+                    <td>{{$contact->last_name}}</td>
                     <td>{{$contact->phone}}</td>
                     <td>{{$contact->email}}</td>
                     <td>{{$contact->address}}</td>
@@ -82,7 +84,8 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>ФИО</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
                 <th>Телефон</th>
                 <th>Email</th>
                 <th>Адрес</th>
@@ -91,7 +94,8 @@
             <tbody>
             @foreach($details as $contact)
                 <tr>
-                    <td>{{$contact->name}}</td>
+                    <td>{{$contact->first_name}}</td>
+                    <td>{{$contact->last_name}}</td>
                     <td>{{$contact->phone}}</td>
                     <td>{{$contact->email}}</td>
                     <td>{{$contact->address}}</td>

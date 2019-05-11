@@ -41,7 +41,7 @@ class ContactsController extends Controller
         $request->validate([
             'first_name'=>'required',
             'last_name'=>'required',
-            'phone'=>'required|unique:contacts|numeric ',
+            'phone'=>'required|unique:contacts|numeric',
             'email'=>'required|unique:contacts|email',
             'address'=>'required'
         ]);

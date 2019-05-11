@@ -20,7 +20,7 @@
                         <label for="password">Пароль:</label>
                         <input type="password" class="form-control" name="password" value="{{old('password')}}"/>
                     </div>
-                    <button type="submit" class="btn btn-primary-outline">Add user</button>
+                    <button type="submit" class="btn btn-primary-outline">Сохранить</button>
                 </form>
             </div>
 

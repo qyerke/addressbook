@@ -3,10 +3,10 @@
 @section('content')
     <div class="content-wrapper">
         <section class="content">
-            <h1 class="display-3">Изменить контакт</h1>
+            <h1 class="display-3">Создать контакт</h1>
             <div>
                 @include('errors')
-                <form method="post" action="{{ route('contacts.update') }}">
+                <form method="post" action="{{ route('contacts.store') }}">
                     @csrf
                     <div class="form-group">
                         <label for="first_name">Фамилия:</label>
@@ -30,7 +30,7 @@
                         <label for="address">Адрес:</label>
                         <input type="text" class="form-control" name="address" value="{{old('address')}}"/>
                     </div>
-                    <button type="submit" class="btn btn-primary-outline">Add contact</button>
+                    <button type="submit" class="btn btn-primary-outline">Сохранить</button>
                 </form>
             </div>
 

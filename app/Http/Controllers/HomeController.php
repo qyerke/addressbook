@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,6 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         $contactCount = Contact::all()->count();
-        return view('home', compact('contactCount'));
+        $usersCount = User::all()->count();
+        return view('home', compact('contactCount', 'usersCount'));
     }
 }
