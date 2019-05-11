@@ -17,7 +17,7 @@
                         <label for="email">Email:</label>
                         <input type="text" class="form-control" name="email" value="{{$user->email}}" readonly/>
                     </div>
-                    <button type="submit" class="btn btn-primary-outline">Add user</button>
+                    <button type="submit" class="btn btn-primary-outline">Сохранить</button>
                 </form>
             </div>
 
